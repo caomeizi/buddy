@@ -3,10 +3,8 @@ import { defineConfig } from 'vitepress'
 // 文档站配置：顶部导航、左侧目录、搜索、右侧锚点导航均在此维护
 export default defineConfig({
   lang: 'zh-CN',
-  // GitHub Pages 路径：
-  // - 主站仓库（仓库名 = 用户名.github.io）保持 '/'
-  // - 项目站（仓库名如 docs）需改为 '/仓库名/'，例如 base: '/docs/'
-  base: '/',
+  // GitHub Pages 项目站路径：https://caomeizi.github.io/buddy/
+  base: '/buddy/',
   title: 'CodeBuddy',
   description: 'AI 智能编程助手产品文档',
   // 需在 git 仓库中才会显示「最后更新时间」；未安装 git 或非 git 仓库时保持 false
