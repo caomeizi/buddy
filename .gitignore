@@ -1,0 +1,11 @@
+# 依赖目录
+node_modules/
+
+# VitePress 构建产物与缓存（由 CI 重新生成，不入库）
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# 日志与系统文件
+*.log
+.DS_Store
+Thumbs.db
