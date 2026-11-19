@@ -50,10 +50,24 @@ docs/
 └── index.md              # 首页
 ```
 
-## 部署上线（对外公开）
+## 部署上线（已配置 GitHub Pages）
 
-`npm run docs:build` 产出的是纯静态文件（`docs/.vitepress/dist`），可免费部署到：
+- 线上地址：https://caomeizi.github.io/buddy/
+- 远程仓库：https://github.com/caomeizi/buddy
+- 部署方式：GitHub Actions（`.github/workflows/deploy.yml`）。推送到 `main` 分支后自动构建并发布到 Pages，无需手动上传。
+- 仓库 **Settings → Pages** 的 Source 已设为 **GitHub Actions**。
 
-- **Vercel / Netlify**：导入 Git 仓库，构建命令 `npm run docs:build`，输出目录 `docs/.vitepress/dist`。
-- **GitHub Pages**：推送 `dist` 目录到 Pages 分支即可。
-- 部署后绑定自己的域名即可对外访问。
+### 以后更新文档
+
+1. 修改 `docs/` 下的 Markdown，本地 `npm run docs:dev` 预览；
+2. 提交并推送：
+   ```bash
+   git add .
+   git commit -m "更新文档"
+   git push
+   ```
+3. Actions 自动重新构建，约 1 分钟后线上地址生效。
+
+### 其他可选部署
+
+`npm run docs:build` 产出纯静态文件（`docs/.vitepress/dist`），也可改部署到 Vercel / Netlify / 自己的服务器或对象存储+CDN。若挂在域名子路径，记得同步调整 `docs/.vitepress/config.mjs` 里的 `base`。
