@@ -5,9 +5,8 @@ export default defineConfig({
   lang: 'zh-CN',
   // GitHub Pages 项目站路径：https://caomeizi.github.io/buddy/
   base: '/buddy/',
-  title: 'CodeBuddy',
-  description: 'AI 智能编程助手产品文档',
-  // 需在 git 仓库中才会显示「最后更新时间」；未安装 git 或非 git 仓库时保持 false
+  title: '对公账户管理小知识',
+  description: '银行对公柜台账户管理科普图文：开户、日常使用、变更销户与合规风控',
   lastUpdated: false,
 
   themeConfig: {
@@ -16,59 +15,60 @@ export default defineConfig({
       provider: 'local'
     },
 
-    // 顶部一级导航标签
+    // 顶部一级导航
     nav: [
-      { text: 'IDE', link: '/guide/intro', activeMatch: '/guide/' },
-      { text: '插件', link: '/' },
-      { text: 'CLI', link: '/' },
-      { text: 'WorkBuddy', link: '/' },
-      { text: 'WorkBuddy 小程序', link: '/' },
-      { text: 'WorkBuddy 移动端', link: '/' },
-      { text: 'WorkBuddy Enterprise', link: '/' }
+      { text: '首页', link: '/' },
+      { text: '知识目录', link: '/bank/01-intro', activeMatch: '/bank/' }
     ],
 
-    // 左侧分组目录：与 docs 下的 Markdown 文件一一对应
-    // collapsed: true 表示默认折叠；新增章节在对应分组的 items 里追加即可
+    // 左侧分组目录：与 docs/bank 下的 Markdown 文件一一对应
     sidebar: [
       {
-        text: '入门指南',
+        text: '开篇',
         collapsed: false,
         items: [
-          { text: '简介', link: '/guide/intro' },
-          { text: '安装和登录', link: '/guide/install' },
-          { text: '快速开始', link: '/guide/quick-start' }
+          { text: '课堂小老师', link: '/bank/01-intro' }
         ]
       },
       {
-        text: '使用指南',
-        collapsed: true,
-        items: [
-          { text: '使用指南', link: '/guide/usage' }
-        ]
-      },
-      {
-        text: '平台接入指南',
+        text: '一、认识账户',
         collapsed: false,
         items: [
-          { text: '微信 ClawBot 接入指南（推荐）', link: '/platform/wechat-clawbot' }
+          { text: '对公账户分四类', link: '/bank/02-account-types' },
+          { text: '开户三原则', link: '/bank/03-opening-principles' }
         ]
       },
       {
-        text: '高级功能',
+        text: '二、开户办理',
         collapsed: false,
         items: [
-          { text: '模型配置', link: '/advanced/model-config' },
-          { text: 'Plan 模式', link: '/advanced/plan-mode' },
-          { text: 'Subagents', link: '/advanced/subagents' },
-          { text: 'Skills', link: '/advanced/skills' },
-          { text: 'Hooks', link: '/advanced/hooks' }
+          { text: '开户资料清单', link: '/bank/04-checklist' },
+          { text: '开户流程一步步', link: '/bank/05-process' },
+          { text: '这些情况不能开户', link: '/bank/06-cannot-open' },
+          { text: '预留印鉴小知识', link: '/bank/07-seal' }
         ]
       },
       {
-        text: '账号',
-        collapsed: true,
+        text: '三、账户日常管理',
+        collapsed: false,
         items: [
-          { text: '账号概览', link: '/account/overview' }
+          { text: '信息变了要更新', link: '/bank/08-update' },
+          { text: '销户前先清理', link: '/bank/09-close' },
+          { text: '久悬不动户', link: '/bank/10-dormant' },
+          { text: '对公要对账', link: '/bank/11-reconcile' },
+          { text: '交易有规矩', link: '/bank/12-transaction-rules' },
+          { text: '非柜面渠道要管控', link: '/bank/13-remote-channel' }
+        ]
+      },
+      {
+        text: '四、合规与风险防控',
+        collapsed: false,
+        items: [
+          { text: '冻结扣划要依法', link: '/bank/14-freeze' },
+          { text: '账户不能乱借', link: '/bank/15-no-lending' },
+          { text: '重空要管好', link: '/bank/16-blank-vouchers' },
+          { text: '柜面红线', link: '/bank/17-red-line' },
+          { text: '一户一档，合规收尾', link: '/bank/18-archive' }
         ]
       }
     ],
