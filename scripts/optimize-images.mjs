@@ -21,8 +21,8 @@ for (const file of files) {
   const outPath = path.join(outDir, `${name}.webp`)
 
   await sharp(srcPath)
-    .resize({ width: 1200, height: 1200, fit: 'inside', withoutEnlargement: true })
-    .webp({ quality: 80 })
+    .resize({ width: 1000, height: 1000, fit: 'inside', withoutEnlargement: true })
+    .webp({ quality: 75 })
     .toFile(outPath)
 
   const srcSize = fs.statSync(srcPath).size
